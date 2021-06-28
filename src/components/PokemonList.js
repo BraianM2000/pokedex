@@ -9,7 +9,7 @@ export const PokemonList = () => {
     }, [])
 
     const getPokemon = () => {
-        const url = `https://pokeapi.co/api/v2/pokemon/`
+        const url = `https://pokeapi.co/api/v2/pokemon?limit=1200`
         return fetch(url)
             .then(resp => resp.json())
             .then(response => {
@@ -38,14 +38,27 @@ export const PokemonList = () => {
 
                 })
             ))
+               
+            
 
     }
+
+    pokemonList.sort(function (a, b) {
+        if (a.id > b.id) {
+          return 1;
+        }
+        if (a.id < b.id) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      })
 
     console.log(pokemonList)
 
     return (
-        <div>
-            <table>
+        <div className="div">
+            <table >
 
                 <tr>
                     <th>id</th>
@@ -55,7 +68,7 @@ export const PokemonList = () => {
                 {
                     pokemonList.map(pokeName => {
                         return <tr>
-                             <td>{pokeName.id}</td>
+                             <td className="id">{pokeName.id}</td>
                               <td><img src={pokeName.sprite} alt={pokeName.name} /></td>
                                 <td><small key={pokeName.name}> {pokeName.name}</small></td>
                               

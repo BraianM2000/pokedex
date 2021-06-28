@@ -1,14 +1,6 @@
-.pokemon{
-    
-    background-color: rgb(131, 187, 224);
-    border-radius: 6px;
-    color: aliceblue;
-    margin: 10%;
-    margin-left: 30%;
-    margin-right:30%
-}
+
 tr:nth-child(even) {
-    background-color: rgb(90, 142, 211);
+    background-color: rgb(172, 172, 172);
   }
 
 form{
@@ -21,18 +13,25 @@ button{
 
 table{
 
-    background-color: rgb(127, 225, 255);
-    border-radius: 6px;
-    
+    background-color: white;
+    margin: 0 auto;
+    width: 40%;
+    border: 5px solid;
+    border-color: black;
+}
+
+.num{
+    color: black !important;
 }
 
 td{
     padding-left: 10%;
     padding-right: 10%;
-    border: 1px solid black;
-
+    border: 1px solid rgba(0, 0, 0, 0.336); 
+    color: #006cb0;
 }
 
-table{
-  margin: 0 auto;
+th{
+    font-size: 20px;
 }
+
