@@ -3,9 +3,36 @@
     background-color: rgb(131, 187, 224);
     border-radius: 6px;
     color: aliceblue;
-    margin: 30%;
+    margin: 10%;
+    margin-left: 30%;
+    margin-right:30%
+}
+tr:nth-child(even) {
+    background-color: rgb(90, 142, 211);
+  }
+
+form{
+    padding: 10px;
 }
 
-div{
-    padding: 10px;
+button{
+    margin-left:10px;
+}
+
+table{
+
+    background-color: rgb(127, 225, 255);
+    border-radius: 6px;
+    
+}
+
+td{
+    padding-left: 10%;
+    padding-right: 10%;
+    border: 1px solid black;
+
+}
+
+table{
+  margin: 0 auto;
 }

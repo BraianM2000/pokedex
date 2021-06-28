@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './styles.css'
 
 export const SearchPokemon = ({setPokemon}) => {
 
@@ -8,7 +9,6 @@ export const SearchPokemon = ({setPokemon}) => {
     const handleSubmit=e=>{
         e.preventDefault()
         setPokemon(value)
-        setValue('')
     }
 
     const handleChange=(e)=>{
@@ -19,9 +19,9 @@ export const SearchPokemon = ({setPokemon}) => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input  type="text" onChange={handleChange} placeholder="Busca un pokemon"/>
-                <button type='submit' onClick={handleSubmit}>Buscar</button>
+            <form className="row justify-content-center" onSubmit={handleSubmit} >
+                <input className="form-group  col-md-2"  onChange={handleChange} placeholder="Busca un pokemon"/>
+                <button className="btn btn-primary col-md-2" type='submit' onClick={handleSubmit}>Buscar</button>
             </form>
         </div>
     )

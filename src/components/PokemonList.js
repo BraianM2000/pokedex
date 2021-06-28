@@ -23,18 +23,19 @@ export const PokemonList = () => {
                 return pokemon
             }).then(pokemon => (
                 pokemon.map(pokeInfo => {
-                  return  fetch(pokeInfo.url)
+                    return fetch(pokeInfo.url)
                         .then(resp => resp.json())
                         .then(response => {
                             const data = response
                             const pokeData = {
-                                    name: data.name,
-                                    sprite: data.sprites.front_default,
-                                  
-                                }
-                            return setPokemonList(poke=>[...poke,pokeData])
+                                id: data.id,
+                                name: data.name,
+                                sprite: data.sprites.front_default,
+
+                            }
+                            return setPokemonList(poke => [...poke, pokeData])
                         })
-                        
+
                 })
             ))
 
@@ -44,17 +45,28 @@ export const PokemonList = () => {
 
     return (
         <div>
-            {
-                pokemonList.map(pokeName => {
-                    return <div>
-                        <h4 key={pokeName.name}> {pokeName.name}</h4>
-                        <img src={pokeName.sprite} alt={pokeName.name} />
+            <table>
+
+                <tr>
+                    <th>id</th>
+                    <th>sprite</th>
+                    <th>nombre</th>
+                </tr>
+                {
+                    pokemonList.map(pokeName => {
+                        return <tr>
+                             <td>{pokeName.id}</td>
+                              <td><img src={pokeName.sprite} alt={pokeName.name} /></td>
+                                <td><small key={pokeName.name}> {pokeName.name}</small></td>
+                              
+                            </tr>
                         
-                        </div>
+                    }
+
+                    )
                 }
 
-                )
-            }
+            </table>
 
         </div>
     )
