@@ -29,7 +29,8 @@ export const PokemonList = () => {
                             const data = response
                             const pokeData = {
                                     name: data.name,
-                                    sprite: data.sprites.front_default
+                                    sprite: data.sprites.front_default,
+                                  
                                 }
                             return setPokemonList(poke=>[...poke,pokeData])
                         })
@@ -39,6 +40,8 @@ export const PokemonList = () => {
 
     }
 
+    console.log(pokemonList)
+
     return (
         <div>
             {
@@ -46,7 +49,7 @@ export const PokemonList = () => {
                     return <div>
                         <h4 key={pokeName.name}> {pokeName.name}</h4>
                         <img src={pokeName.sprite} alt={pokeName.name} />
-                    
+                        
                         </div>
                 }
 
